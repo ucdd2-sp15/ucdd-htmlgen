@@ -3,10 +3,15 @@ var chalk = require('chalk')
 
 module.exports = {
 
-    // clinet usage:
+    // Client code example
     //
-    //	 $ = html('<h1>heading 1</h1>')
-    //   $('td').should.exist()
+    //	 $ = html('<h1>heading 1</h1>')   --> returns a function(tageName), assigned to $
+    //
+    //   $('td')  --> invoked with the string 'td' bound to the argument 'tagName', which returns
+    //                an object with a "should" property
+    //
+    //   $('td').should.exist() --> "should" is an instance of the Should class, which provides
+    //                              a set of matcher methods, such as exist()
     // 	
     html: function(htmlText) {
 
