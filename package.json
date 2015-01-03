@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ucdd2-sp15/ucdd-htmlgen",
   "dependencies": {
+    "chalk": "^0.5.1",
     "debug": "^2.1.1"
   }
 }
