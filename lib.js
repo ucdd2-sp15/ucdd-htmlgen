@@ -29,7 +29,16 @@ lib.generateTableRow = function (arrayOfText) {
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
-    return "not yet implemented"
+    var outStr = '<table>';
+	for (var i = 0; i < twoDimensionalArrayOfText.length ; i++){
+	    outStr = outStr + '<tr>';
+	    for (var j = 0; j < twoDimensionalArrayOfText[0].length ; j++){
+		    outStr = outStr + '<td>' + twoDimensionalArrayOfText[i][j] + '</td>';
+		}
+		outStr = outStr + '</tr>';
+	}
+	outStr = outStr + '</table>';
+    return outStr;
 }
 
 lib.generateHyperLink = function(url, text) {
