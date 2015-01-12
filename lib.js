@@ -12,12 +12,17 @@ lib.generateHeading = function(level, text) {
 lib.generateOrderedList = function(arrayOfText) {
     var construct = "<ol>"
     for(i = 0; i<arrayOfText.length; i++)
-        construct += "<li>"+arrayOfText
-    return 
+        construct += "<li>"+arrayOfText[i]+"</li>"+"\n"
+    construct += "</ol>"
+    return construct
 }
 
 lib.generateUnorderedList = function(arrayOfText) {
-    return "not yet implemented"
+    var construct = "<ul>"
+    for(i = 0; i<arrayOfText.length; i++)
+        construct += "<li>"+arrayOfText[i]+"</li>"+"\n"
+    construct += "</ul>"
+    return construct
 }
 
 lib.generateTableRow = function (arrayOfText) {
@@ -29,7 +34,7 @@ lib.generateTable = function(twoDimensionalArrayOfText) {
 }
 
 lib.generateHyperLink = function(url, text) {
-    return "not yet implemented"
+    return "<a href=\""+url+"\">"+text+"</a>" 
 }
 
 lib.generateFormTextField = function(name) {
