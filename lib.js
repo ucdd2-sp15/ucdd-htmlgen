@@ -1,24 +1,43 @@
 var debug = require('debug')('lib')
 var lib = {}
 
+var generateListItems = function(arrayOfText) {
+    var listItems = "";
+    var count = arrayOfText.length;
+    for (var i = 0; i < count; i++) {
+        listItems += "<li>" + arrayOfText[i] + "</li>";
+    }
+    return listItems;
+}
+
 lib.generateHeading1 = function(text) {
     return "<h1>" + text + "</h1>"
 }
 
 lib.generateHeading = function(level, text) {
-    return "not yet implemented"
+    return "<h" + level + ">" + text + "</h" + level + ">"
 }
 
 lib.generateOrderedList = function(arrayOfText) {
-    return "not yet implemented"
+  var listItems = generateListItems(arrayOfText);
+  return "<ol>" + listItems + "</ol>";
 }
 
+
 lib.generateUnorderedList = function(arrayOfText) {
-    return "not yet implemented"
+    var listItems = generateListItems(arrayOfText);
+    return "<ul>" + listItems + "</ul>";
 }
 
 lib.generateTableRow = function (arrayOfText) {
-    return "not yet implemented"
+    var outStr = '<tr>';
+    for (var i = 0 ; i < arrayOfText.length ; i++){
+        outStr = outStr + '<td>' + arrayOfText[i] + '</td>';
+    }
+
+    outStr = outStr + '</tr>'
+    return outStr;
+
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
