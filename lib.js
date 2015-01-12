@@ -15,7 +15,7 @@ lib.generateHeading1 = function(text) {
 }
 
 lib.generateHeading = function(level, text) {
-    return "not yet implemented"
+    return "<h" + level + ">" + text + "</h" + level + ">"
 }
 
 lib.generateOrderedList = function(arrayOfText) {
