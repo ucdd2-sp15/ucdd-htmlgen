@@ -2,11 +2,17 @@ var debug = require('debug')('lib')
 var lib = {}
 
 lib.generateHeading1 = function(text) {
-    return "<h1>" + text + "</h1>"
+    return "<h1>" + String(text) + "</h1>"
 }
 
 lib.generateHeading = function(level, text) {
-    return "<h" + level + ">" + text + "</h" + level + ">"
+
+    var levelNumber = parseInt(level);
+
+    if(levelNumber < 1 || levelNumber > 6)
+        throw "Heading level can only be in the range [1, 6]"
+
+    return "<h" + String(levelNumber) + ">" + String(text) + "</h" + String(levelNumber) + ">"
 }
 
 lib.generateOrderedList = function(arrayOfText) {
@@ -37,7 +43,7 @@ lib.generateTableRow = function (arrayOfText) {
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
-    return "not yet implemented"
+    return lib.generateTableRow(twoDimensionalArrayOfText[0]) + lib.generateTableRow(twoDimensionalArrayOfText[1])
 }
 
 lib.generateHyperLink = function(url, text) {
