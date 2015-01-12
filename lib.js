@@ -18,7 +18,14 @@ lib.generateUnorderedList = function(arrayOfText) {
 }
 
 lib.generateTableRow = function (arrayOfText) {
-    return "not yet implemented"
+    var outStr = '<tr>';
+    for (var i = 0 ; i < arrayOfText.length ; i++){
+        outStr = outStr + '<td>' + arrayOfText[i] + '</td>';
+    }
+
+    outStr = outStr + '</tr>'
+    return outStr;
+
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
