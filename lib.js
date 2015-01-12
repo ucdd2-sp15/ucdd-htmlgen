@@ -1,6 +1,15 @@
 var debug = require('debug')('lib')
 var lib = {}
 
+var generateListItems = function(arrayOfText) {
+    var listItems = "";
+    var count = arrayOfText.length;
+    for (var i = 0; i < count; i++) {
+        listItems += "<li>" + arrayOfText[i] + "</li>";
+    }
+    return listItems;
+}
+
 lib.generateHeading1 = function(text) {
     return "<h1>" + text + "</h1>"
 }
@@ -14,7 +23,8 @@ lib.generateOrderedList = function(arrayOfText) {
 }
 
 lib.generateUnorderedList = function(arrayOfText) {
-    return "not yet implemented"
+    var listItems = generateListItems(arrayOfText);
+    return "<ul>" + listItems + "</ul>";
 }
 
 lib.generateTableRow = function (arrayOfText) {
