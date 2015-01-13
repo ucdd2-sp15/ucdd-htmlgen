@@ -43,7 +43,7 @@ lib.generateTableRow = function (arrayOfText) {
 lib.generateTable = function(twoDimensionalArrayOfText) {
     var html = "<table>"
     var length = twoDimensionalArrayOfText.length;
-    for(var i = 1; i < length; i++){
+    for(var i = 0; i < length; i++){
         html += lib.generateTableRow(twoDimensionalArrayOfText[i]);
     }
     html += "</table>"
@@ -63,7 +63,14 @@ lib.generateFormTextFieldWithLabel = function(name, label) {
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
-    return "not yet implemented"
+    var html = "\n<select>\n";
+    var length = arrayOfValues.length;
+    for(var i=0; i<length; i++){
+        html += "  <option value=\"" + arrayOfValues[i] + "\">" + arrayOfText[i] + "</option>\n"
+    }
+    html += "</select>"
+
+    return html;
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
