@@ -33,6 +33,10 @@ lib.generateTableRow = function (arrayOfText) {
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
+    var html = "<table>"
+    for(index in twoDimensionalArrayOfText){
+         html += generateTableRow(twoDimensionalArrayOfText[index]);
+    }
     return "not yet implemented"
 }
 
