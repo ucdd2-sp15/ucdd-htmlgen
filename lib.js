@@ -10,7 +10,6 @@ lib.generateHeading = function(level, text) {
 }
 
 lib.generateOrderedList = function(arrayOfText) {
-<<<<<<< HEAD
     var str="\n<ol>\n"
     for(var x in arrayOfText){
         str+="  <li>"+arrayOfText[x]+"</li>\n"
@@ -26,22 +25,9 @@ lib.generateUnorderedList = function(arrayOfText) {
     }
     str+="</ul>\n"
     return str
-=======
-    var construct = "<ol>"
-    for(i = 0; i<arrayOfText.length; i++)
-        construct += "<li>"+arrayOfText[i]+"</li>"+"\n"
-    construct += "</ol>"
-    return construct
+
 }
 
-lib.generateUnorderedList = function(arrayOfText) {
-    var construct = "<ul>"
-    for(i = 0; i<arrayOfText.length; i++)
-        construct += "<li>"+arrayOfText[i]+"</li>"+"\n"
-    construct += "</ul>"
-    return construct
->>>>>>> dfadd475dd15c42f27f56e9aa1741eec2a2bdcc0
-}
 
 lib.generateTableRow = function (arrayOfText) {
     var str="\n<tr>\n"
@@ -66,11 +52,8 @@ lib.generateTable = function(twoDimensionalArrayOfText) {
 }
 
 lib.generateHyperLink = function(url, text) {
-<<<<<<< HEAD
-    return "<a href="+"\""+url+"\">"+text+"</a>"
-=======
+
     return "<a href=\""+url+"\">"+text+"</a>" 
->>>>>>> dfadd475dd15c42f27f56e9aa1741eec2a2bdcc0
 }
 
 lib.generateFormTextField = function(name) {
