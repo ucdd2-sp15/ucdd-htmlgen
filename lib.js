@@ -58,11 +58,11 @@ lib.generateHyperLink = function(url, text) {
 }
 
 lib.generateFormTextField = function(name) {
-    return '<input type="text" name="' + firstName '">';
+    return '<input type="text" name="' + name + '">';
 }
 
 lib.generateFormTextFieldWithLabel = function(name, label) {
-    return '<label>' + label + '</label> <input type="text" name="' + name  + '">';
+    return '<label>' + label + '</label> <input type="text" name="' + name + '">';
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
@@ -75,7 +75,9 @@ lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
-    return "not yet implemented"
+    var fs = '';
+    (allowfullscreen) ? fs = 'allowfullscreen' : fs = '';
+    return '<iframe width="' + width + '" height="' + height + '" src="//www.youtube.com/embed/' + videoId +  '" ' + fs + '></iframe>';
 }
 
 module.exports = lib
