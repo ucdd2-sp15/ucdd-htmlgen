@@ -42,10 +42,12 @@ lib.generateTableRow = function (arrayOfText) {
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
     var html = "<table>"
-    for(index in twoDimensionalArrayOfText){
-         html += generateTableRow(twoDimensionalArrayOfText[index]);
+    var length = twoDimensionalArrayOfText.length;
+    for(var i = 1; i < length; i++){
+        html += lib.generateTableRow(twoDimensionalArrayOfText[i]);
     }
-    return "not yet implemented"
+    html += "</table>"
+    return html
 }
 
 lib.generateHyperLink = function(url, text) {
