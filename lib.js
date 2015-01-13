@@ -30,6 +30,7 @@ lib.generateUnorderedList = function(arrayOfText) {
 }
 
 lib.generateTableRow = function (arrayOfText) {
+    // Author: Brian Newsom
     var outStr = '<tr>';
     for (var i = 0 ; i < arrayOfText.length ; i++){
         outStr = outStr + '<td>' + arrayOfText[i] + '</td>';
@@ -54,18 +55,22 @@ lib.generateTable = function(twoDimensionalArrayOfText) {
 }
 
 lib.generateHyperLink = function(url, text) {
+    // Author: Brian Newsom
     return "<a href='"+ url + "'>" + text + "</a>";
 }
 
 lib.generateFormTextField = function(name) {
+    // Author: Brian Newsom
     return '<input type="text" name="' + name + '">';
 }
 
 lib.generateFormTextFieldWithLabel = function(name, label) {
+    // Author: Brian Newsom
     return '<label>' + label + '</label> <input type="text" name="' + name + '">';
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
+    // Author: Brian Newsom
     var outStr = '<select>\n';
     for (var i = 0 ; i < arrayOfValues.length ; i++){
         outStr = outStr + '<option value="' + arrayOfValues[i] + '">' + arrayOfText[i] + '</option>\n';
@@ -75,6 +80,7 @@ lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
+    // Author: Brian Newsom
     var fs = '';
     (allowfullscreen) ? fs = 'allowfullscreen' : fs = '';
     return '<iframe width="' + width + '" height="' + height + '" src="//www.youtube.com/embed/' + videoId +  '" ' + fs + '></iframe>';
