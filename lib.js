@@ -41,7 +41,13 @@ lib.generateTableRow = function (arrayOfText) {
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
-    return "not yet implemented"
+    var html = "<table>"
+    var length = twoDimensionalArrayOfText.length;
+    for(var i = 1; i < length; i++){
+        html += lib.generateTableRow(twoDimensionalArrayOfText[i]);
+    }
+    html += "</table>"
+    return html
 }
 
 lib.generateHyperLink = function(url, text) {
