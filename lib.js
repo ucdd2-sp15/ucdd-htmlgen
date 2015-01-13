@@ -58,19 +58,20 @@ lib.generateHyperLink = function(url, text) {
 }
 
 lib.generateFormTextField = function(name) {
-    return "not yet implemented"
-}
-
-lib.generateFormTextField = function(name) {
-    return "not yet implemented"
+    return '<input type="text" name="' + firstName '">';
 }
 
 lib.generateFormTextFieldWithLabel = function(name, label) {
-    return "not yet implemented"
+    return '<label>' + label + '</label> <input type="text" name="' + name  + '">';
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
-    return "not yet implemented"
+    var outStr = '<select>\n';
+    for (var i = 0 ; i < arrayOfValues.length ; i++){
+        outStr = outStr + '<option value="' + arrayOfValues[i] + '">' + arrayOfText[i] + '</option>\n';
+    }
+    outStr = outStr + '</select>\n';
+    return outStr;
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
