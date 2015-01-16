@@ -39,8 +39,9 @@ lib.generateTableRow = function (arrayOfText) {
 lib.generateTable = function(twoDimensionalArrayOfText) {
     var finalString = "<table>";
     for (var i = 0; i < twoDimensionalArrayOfText.length; i++) {
-        finalString += "<tr><td>" + twoDimensionalArrayOfText[i][0] + "</td><td>" + twoDimensionalArrayOfText[i][1] + "</td></tr>";
-    }
+
+        finalString += lib.generateTableRow(twoDimensionalArrayOfText[i])
+ }
     finalString += "</table>";
     return finalString; 
 }
@@ -53,12 +54,8 @@ lib.generateFormTextField = function(name) {
     return '<form><input type="text" name="'+name+'"></form>';
 }
 
-lib.generateFormTextField = function(name) {
-    return '<form><input type="text" name="'+name+'"></form>';
-}
-
 lib.generateFormTextFieldWithLabel = function(name, label) {
-    return '<form>'+ label+':<br><input type="text" name="'+name+'"></form>';
+    return '<label>' + label + '</label> <input type="text" name="' + name + '">';
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
@@ -71,7 +68,10 @@ lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
-    return '<iframe width="'+width+'" height="'+height+'" src="http://www.youtube.com/embed/'+videoId+'" allowfullscreen="'+allowfullscreen+'"></iframe>'
+    if ( allowfullscreen == true )
+        return '<iframe width="'+width+'" height="'+height+'" src="http://www.youtube.com/embed/'+videoId+'" allowfullscreen></iframe>';
+    else
+        return '<iframe width="'+width+'" height="'+height+'" src="http://www.youtube.com/embed/'+videoId+'"></iframe>';
 }
 
 module.exports = lib
