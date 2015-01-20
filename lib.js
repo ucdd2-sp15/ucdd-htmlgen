@@ -10,7 +10,7 @@ lib.generateHeading = function(level, text) {
 }
 
 lib.generateOrderedList = function(arrayOfText) {
-    return "not yet implemented"
+    return arrayOfText.sort();
 }
 
 lib.generateUnorderedList = function(arrayOfText) {
@@ -26,7 +26,7 @@ lib.generateTable = function(twoDimensionalArrayOfText) {
 }
 
 lib.generateHyperLink = function(url, text) {
-    return "<a href=" + "'" + url + "'" + ">" + text + "</a>"
+    return "<a href=" + '"' + url + '"' + ">" + text + "</a>"
 }
 
 lib.generateFormTextField = function(name) {
